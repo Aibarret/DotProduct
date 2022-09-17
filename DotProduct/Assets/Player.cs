@@ -44,8 +44,10 @@ public class Player : MonoBehaviour
             float dot = Vector3.Dot(new Vector3(0, -1, 0), Vector3.Normalize(transform.position - sign.transform.position));
             if (dot > .70)
             {
-                print("it Worky");
+                GameObject.Destroy(sign);
             }
         }
     }
+
+
 }
