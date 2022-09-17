@@ -14,7 +14,6 @@ public class Object : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         float dot = Vector3.Dot(new Vector3(1, 0, 0), Vector3.Normalize(player.transform.position - transform.position));
-        print(dot);
         if (dot < -.01)
         {
             print("Ding!!!");

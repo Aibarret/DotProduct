@@ -38,15 +38,14 @@ public class Player : MonoBehaviour
             rb.MovePosition(new Vector3(transform.position.x, (transform.position.y + (speed * Time.deltaTime) * -1), 0) );
         }
 
-        if (Input.GetKey(KeyCode.Space))
+
+        //print(Vector3.Dot(new Vector3(0,-1,0), Vector3.Normalize(transform.position - sign.transform.position)));
+        float dot = Vector3.Dot(new Vector3(0, -1, 0), Vector3.Normalize(transform.position - sign.transform.position));
+        if (dot > .70)
         {
-            print(Vector3.Dot(new Vector3(0,-1,0), Vector3.Normalize(transform.position - sign.transform.position)));
-            float dot = Vector3.Dot(new Vector3(0, -1, 0), Vector3.Normalize(transform.position - sign.transform.position));
-            if (dot > .70)
-            {
-                GameObject.Destroy(sign);
-            }
+            GameObject.Destroy(sign);
         }
+
     }
 
 
